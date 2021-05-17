@@ -1,0 +1,42 @@
+.leaf img, .flower img, .tv img, .window img, .pond img {
+    width: 350px;
+    height: 450px;
+}
+
+.container {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+/* link animation */
+
+.linkStyled {
+    position: relative;
+    transition: clip-path 275ms ease;
+}
+
+.linkStyled:hover span.wavy::before, .linkStyled:focus span.wavy::before {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+span.wavy {
+      position: relative;
+      display: inline-block;
+      color: #4d9ff7;
+}
+
+span.wavy::before {
+    position: absolute;
+    content: attr(data-content);
+    color: #2c2fe8;
+    text-decoration: underline;
+    text-decoration-color: #2c2fe8;
+    clip-path: polygon(0 0, 0 0, 0% 100%, 0 100%);
+    transition: clip-path 275ms ease;
+}
+
+span.wavy::before {
+    text-decoration-style: wavy;
+    height: 40px;
+}

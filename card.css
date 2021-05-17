@@ -1,0 +1,98 @@
+body {
+    height: 100vh;
+    font-family: 'Dancing Script', cursive;
+}
+.missionCard{
+    position: relative;
+    width: 400px;
+    height: 530px;
+    justify-content: center;
+    margin: auto;
+}
+
+.content{
+    position: absolute;
+    bottom: 0px;
+    width: 80%;
+    height: 90px;
+    left: 10%;
+    text-align: center;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.content h3{
+    font-size: 30px;
+    margin: 25px;
+}
+
+.missionCard:hover .content{
+    height: 100%;
+    width: 100%;
+    left: 0%;
+}
+
+.imageContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.missionCard img {
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+}
+.content img {
+    height: 450px;
+    width: 350px;
+}
+
+.container1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.container2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.header {
+    text-align: center;
+    font-size: 40px;
+}
+
+/* link animation */
+
+.linkStyled {
+    position: relative;
+    transition: clip-path 275ms ease;
+}
+
+.linkStyled:hover span.wavy::before, .linkStyled:focus span.wavy::before {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+span.wavy {
+      position: relative;
+      display: inline-block;
+      color: #4d9ff7;
+}
+
+span.wavy::before {
+    position: absolute;
+    content: attr(data-content);
+    color: #2c2fe8;
+    text-decoration: underline;
+    text-decoration-color: #2c2fe8;
+    clip-path: polygon(0 0, 0 0, 0% 100%, 0 100%);
+    transition: clip-path 275ms ease;
+}
+
+span.wavy::before {
+    text-decoration-style: wavy;
+    height: 40px;
+}
